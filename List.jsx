@@ -4,6 +4,12 @@ function List(props) {
   const itemList = props.items;
   const category = props.category;
 
+  function List(props) {
+    
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   itemList.sort((a, b) => a.name.localeCompare(b.name));
   // const lowCalFruits = fruits.filter((fruit) => fruit.calories < 100);
 
@@ -15,7 +21,7 @@ function List(props) {
 
   const listItems = itemList.map((item) => (
     <li key={item.id}>
-      {item.name} - {item.calories}
+      {capitalizeFirstLetter(item.name)} - {item.calories}
     </li>
   ));
   return (
